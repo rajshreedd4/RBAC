@@ -14,9 +14,8 @@ const {
 
 router.post("/create", createRole);
 router.get("/", getAllRoles);
+router.put("/assign-permissions", assignPermissions);
 router.get("/:id", getRoleById);
 router.put("/:id", updateRole);
 router.delete("/:id", deleteRole);
-router.put("/assign-permissions", assignPermissions);
-
 module.exports = router;
