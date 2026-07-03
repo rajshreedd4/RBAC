@@ -7,6 +7,9 @@ dotenv.config();
 const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/auth");
+const roleRoutes = require("./routes/role");
+const permissionRoutes = require("./routes/permission");
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -15,7 +18,11 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Routes
 app.use("/auth", authRoutes);
+app.use("/roles", roleRoutes);
+app.use("/permissions", permissionRoutes);
+app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
     res.json({
